@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-color: hsl(225, 100%, 94%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 376px) {
+    body {
+        padding: 2.5rem;
+        background-size: contain;
+        background-position: center;
+    }
+
+    body::after {
+        content: '';
+        background-color: rgb(214, 225, 255);
+        position: absolute;
+        top: 0;
+        height: 50%;
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+.card {
+    height: fit-content;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-radius: 16px;
+}
+
+@media screen and (max-width: 376px) {
+    .card {
+        width: 350px;
+    }
+}
+
+.card .hero-img {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+}
+
+.card .text-wrapper {
+    margin: 1.8rem 0;
+    text-align: center;
+    padding: 0 2.5rem;
+}
+
+.card .text-wrapper h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.card .text-wrapper p {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+    color: hsl(224, 23%, 55%);
+}
+
+.card .plan-selection-box .plan-icon {
+    grid-area: plan-icon;
+}
+
+.card .plan-selection-box .plan-name {
+    grid-area: plan-name;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.card .plan-selection-box .plan-price {
+    grid-area: plan-price;
+    color: hsl(224, 23%, 55%);
+}
+
+.card .plan-selection-box #plan-change {
+    grid-area: plan-change;
+    font-weight: bold;
+}
+
+.card .plan-selection-box #plan-change:hover {
+    opacity: 0.75;
+    text-decoration: none;
+}
+
+.card .plan-selection-box {
+    width: 90%;
+    margin-bottom: 2rem;
+    padding: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "plan-icon plan-name plan-name plan-change"
+        "plan-icon plan-price plan-price plan-change";
+    align-items: center;
+    gap: 0 1rem;
+    background-color: hsl(225, 100%, 98%);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 376px) {
+    .card .plan-selection-box {
+        font-size: 14px;
+        padding: 0.8rem;
+    }
+}
+
+#btn-proceed,
+#btn-cancel {
+    width: 90%;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+#btn-proceed {
+    margin-bottom: 1rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+    background-color: hsl(245, 75%, 52%);
+    color: white;
+    box-shadow: hsl(245, 75%, 52%) 0px 10px 25px -10px;
+}
+
+#btn-proceed:hover {
+    opacity: 0.75;
+}
+
+#btn-cancel {
+    margin-bottom: 1.2rem;
+    padding: 1.2rem;
+    color: hsl(224, 23%, 55%);
+}
+
+#btn-cancel:hover {
+    color: black;
+}
+
+.attribution {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: hsl(245, 75%, 52%);
+}
+
+.attribution a:hover {
+    color: hsl(224, 23%, 55%);
+}
